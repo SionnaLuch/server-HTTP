@@ -26,7 +26,7 @@ app.post('/contact/send-message', upload.single('uploadedFile'), (req, res) => {
     const { author, sender, title, message } = req.body;
     const uploadedFile = req.file;
     if (author && sender && title && message && uploadedFile) {
-      res.render('contact', { isSent: true, name: uploadedFile.originalname });
+      res.render('contact', { isSent: true, name: uploadedFile.originalName });
     }
     else {
       res.render('contact', { isError: true });
